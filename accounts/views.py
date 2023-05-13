@@ -16,10 +16,10 @@ class RegisterEmployeeView(CreateView):
         'title': 'Register'
     }
 
-    def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return HttpResponseRedirect(self.get_success_url())
-        return super().dispatch(self.request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     if self.request.user.is_authenticated:
+    #         return HttpResponseRedirect(self.get_success_url())
+    #     return super().dispatch(self.request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
 
@@ -45,10 +45,10 @@ class RegisterEmployerView(CreateView):
         'title': 'Register'
     }
 
-    def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return HttpResponseRedirect(self.get_success_url())
-        return super().dispatch(self.request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     if self.request.user.is_authenticated:
+    #         return HttpResponseRedirect(self.get_success_url())
+    #     return super().dispatch(self.request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
 
@@ -76,10 +76,10 @@ class LoginView(FormView):
         'title': 'Login'
     }
 
-    def dispatch(self, request, *args, **kwargs):
-        if self.request.user.is_authenticated:
-            return HttpResponseRedirect(self.get_success_url())
-        return super().dispatch(self.request, *args, **kwargs)
+    # def dispatch(self, request, *args, **kwargs):
+    #     if self.request.user.is_authenticated:
+    #         return HttpResponseRedirect(self.get_success_url())
+    #     return super().dispatch(self.request, *args, **kwargs)
 
     def get_success_url(self):
         if 'next' in self.request.GET and self.request.GET['next'] != '':
